@@ -19,3 +19,10 @@ This is a responsive, modern personal webpage for 何承祐. It features a drama
 - Vanilla JavaScript
 - Google Fonts (Inter, Noto Sans TC)
 - Font Awesome (Social Icons)
+
+## Completed Tasks
+- [x] Create a responsive, moody personal homepage (`index.html`) using HTML/CSS.
+- [x] Integrate real-time updating clock using vanilla JavaScript.
+- [x] Configure a custom GitHub Pages link for a live demo.
+- [x] Generate automated homepage screenshot for documentation.
+- [x] Compose project `README.md` with features and technologies.
