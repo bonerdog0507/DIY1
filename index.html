@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>何承祐 - Personal Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Noto+Sans+TC:wght@300;400;500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            height: 100%;
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+            color: white;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            /* High-quality moody Unsplash background image similar to the Wix template */
+            background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2564&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Subtle gradient overlay to make text pop and match the dramatic vibe */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.1) 100%);
+        }
+
+        /* Navigation */
+        nav {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 80px;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 45px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.6;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 25px;
+            font-size: 18px;
+        }
+
+        .social-icons a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            opacity: 0.6;
+        }
+
+        /* Main Content */
+        .content {
+            position: absolute;
+            top: 48%;
+            left: 10%;
+            transform: translateY(-50%);
+            z-index: 10;
+            max-width: 800px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        h1 {
+            font-size: 85px;
+            font-weight: 400;
+            letter-spacing: 6px;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 12px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
+
+        .time-display {
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            opacity: 0.8;
+            font-family: 'Inter', monospace;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-40%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(-50%);
+            }
+        }
+
+        /* Scroll Icon */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .mouse {
+            width: 22px;
+            height: 34px;
+            border: 1.5px solid rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .wheel {
+            width: 3px;
+            height: 5px;
+            background: white;
+            border-radius: 2px;
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scroll 2s infinite;
+        }
+
+        .arrow {
+            margin-top: 8px;
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 5px solid rgba(255, 255, 255, 0.8);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                top: 6px;
+                opacity: 1;
+            }
+
+            100% {
+                top: 16px;
+                opacity: 0;
+            }
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-5px);
+            }
+
+            60% {
+                transform: translateY(-3px);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 25px;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .content {
+                left: 5%;
+                right: 5%;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 50px;
+                letter-spacing: 4px;
+            }
+
+            .subtitle {
+                letter-spacing: 6px;
+            }
+        }
+    </style>
+    <!-- Font Awesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="hero">
+        <div class="overlay"></div>
+
+        <nav>
+            <div class="logo">HC</div>
+            <div class="nav-links">
+                <a href="#">Portfolio</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </nav>
+
+        <div class="content">
+            <h1>何承祐</h1>
+            <div class="subtitle">Current Time</div>
+            <div class="time-display" id="clock">Loading time...</div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow"></div>
+        </div>
+    </div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+
+            // Format time as YYYY-MM-DD HH:MM:SS
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+
+            const timeString = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+
+            document.getElementById('clock').textContent = timeString;
+        }
+
+        // Update immediately, then every second
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+
+</html>
